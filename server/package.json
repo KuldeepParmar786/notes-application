@@ -1,28 +1,31 @@
 {
-  "name": "phonebook",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "backend for phonebook",
   "main": "index.js",
   "scripts": {
     "build:ui": "rm -rf dist && cd ../Client && npm run build && cp -r dist ../Server",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint":"eslint ."
   },
-  "keywords": [
-    "rr"
-  ],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
+    "core-js": "^3.38.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.5.4",
-    "morgan": "^1.10.0"
+    "regenerator-runtime": "^0.14.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@stylistic/eslint-plugin-js": "^2.7.2",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0",
     "nodemon": "^3.1.4"
   }
 }
